@@ -1,0 +1,2 @@
+FROM 267317892887.dkr.ecr.us-east-1.amazonaws.com/sampl-tcibw-l6t99mzzw3k6:2.4.0
+ADD CustomerService_1.0.0.ear /

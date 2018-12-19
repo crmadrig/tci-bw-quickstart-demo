@@ -1,0 +1,128 @@
+{
+  "ipcMode": null,
+  "executionRoleArn": null,
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/customer-service",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "entryPoint": null,
+      "portMappings": [
+        {
+          "hostPort": 8081,
+          "protocol": "tcp",
+          "containerPort": 8080
+        },
+        {
+          "hostPort": 7777,
+          "protocol": "tcp",
+          "containerPort": 7777
+        }
+      ],
+      "command": null,
+      "linuxParameters": null,
+      "cpu": 0,
+      "environment": [
+        {
+          "name": "APP_CONFIG_PROFILE",
+          "value": "Docker"
+        },
+        {
+          "name": "BW_JAVA_OPTS",
+          "value": "-Dbw.engine.opentracing.enable=true"
+        },
+        {
+          "name": "BW_PROFILE",
+          "value": "Docker"
+        },
+        {
+          "name": "CONSUL_SERVER_URL",
+          "value": "http://sampl-loadb-108n1pxel34sd-1509584923.us-east-1.elb.amazonaws.com:8500"
+        },
+        {
+          "name": "JAEGER_AGENT_HOST",
+          "value": "10.0.32.151"
+        },
+        {
+          "name": "JAEGER_AGENT_PORT",
+          "value": "6831"
+        },
+        {
+          "name": "JAEGER_SAMPLER_MANAGER_HOST_PORT",
+          "value": "10.0.32.151:5778"
+        },
+        {
+          "name": "CLIENT_SERVICE",
+          "value": "10.0.32.1"
+        }
+      ],
+      "ulimits": null,
+      "dnsServers": null,
+      "mountPoints": [],
+      "workingDirectory": null,
+      "secrets": null,
+      "dockerSecurityOptions": null,
+      "memory": 1024,
+      "memoryReservation": null,
+      "volumesFrom": [],
+      "image": "267317892887.dkr.ecr.us-east-1.amazonaws.com/sampl-tcibw-l6t99mzzw3k6:customerservice",
+      "disableNetworking": null,
+      "interactive": null,
+      "healthCheck": null,
+      "essential": true,
+      "links": null,
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": null,
+      "systemControls": null,
+      "privileged": null,
+      "name": "customer-service"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "1024",
+  "taskRoleArn": null,
+  "compatibilities": [
+    "EC2"
+  ],
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:267317892887:task-definition/customer-service:1",
+  "family": "customer-service",
+  "requiresAttributes": [
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    }
+  ],
+  "pidMode": null,
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "networkMode": null,
+  "cpu": null,
+  "revision": 1,
+  "status": "ACTIVE",
+  "volumes": []
+}
