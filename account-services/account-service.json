@@ -33,7 +33,7 @@
             ],
             "name": "account-service",
             "mountPoints": [],
-            "image": "<AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<ECR_REPO_NAME>:account-service",
+            "image": "<AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/<ECR_REPO_NAME>:account-service",
             "cpu": 256,
             "portMappings": [
               {

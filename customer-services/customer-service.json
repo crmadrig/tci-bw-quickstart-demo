@@ -35,13 +35,13 @@
               "logDriver": "awslogs",
               "options": {
                 "awslogs-group": "/ecs/customer-service",
-                "awslogs-region": "us-east-1",
+                "awslogs-region": "<AWS_REGION>",
                 "awslogs-stream-prefix": "ecs"
               }
             },
             "name": "customer-service",
             "mountPoints": [],
-            "image": "<AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<ECR_REPO_NAME>:customer-service",
+            "image": "<AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/<ECR_REPO_NAME>:customer-service",
             "cpu": 256,
             "portMappings": [
               {
