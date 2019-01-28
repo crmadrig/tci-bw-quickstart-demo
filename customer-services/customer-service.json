@@ -16,11 +16,11 @@
               },
               {
                 "name": "CONSUL_SERVER_URL",
-                "value": "http://tci-t-loadb-f18lfss0x48b-1372265209.us-east-1.elb.amazonaws.com:8500"
+                "value": "http://<LOAD_BALANCER_DNS>:8500"
               },
               {
                 "name": "JAEGER_AGENT_HOST",
-                "value": "10.0.8.77"
+                "value": "<JAEGER_HOST_PRIVATE_IP>"
               },
               {
                 "name": "JAEGER_AGENT_PORT",
@@ -28,20 +28,20 @@
               },
               {
                 "name": "JAEGER_SAMPLER_MANAGER_HOST_PORT",
-                "value": "10.0.8.77:5778"
+                "value": "<JAEGER_HOST_PRIVATE_IP>:5778"
               }
             ],
             "logConfiguration": {
               "logDriver": "awslogs",
               "options": {
                 "awslogs-group": "/ecs/customer-service",
-                "awslogs-region": "us-east-1",
+                "awslogs-region": "<AWS_REGION>",
                 "awslogs-stream-prefix": "ecs"
               }
             },
             "name": "customer-service",
             "mountPoints": [],
-            "image": "082336523630.dkr.ecr.us-east-1.amazonaws.com/tci-t-tcibw-z8ey0bfd54dt:customer-service",
+            "image": "<AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/<ECR_REPO_NAME>:customer-service",
             "cpu": 256,
             "portMappings": [
               {

@@ -1,2 +1,2 @@
-FROM 267317892887.dkr.ecr.us-east-1.amazonaws.com/sampl-tcibw-l6t99mzzw3k6:2.4.0
+FROM <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/<ECR_REPO_NAME>:2.4.2
 ADD AccountService_1.0.0.ear /
